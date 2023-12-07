@@ -1,17 +1,18 @@
-package com.example.First_Projict_SpringBoot.controller;
+package com.example.First_Projict_SpringBoot.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class User {
-    private String id;
+    private int id;
     private String firstName;
     private String lastName;
     private String email;
     private int age;
     private String address;
-    private Date joiningDate;
+    private LocalDate joiningDate;
 
-    public User(String id, String firstName, String lastName, String email, int age, String address, Date joiningDate) {
+    public User(int id, String firstName, String lastName, String email, int age, String address, LocalDate joiningDate) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,11 +22,11 @@ public class User {
         this.joiningDate = joiningDate;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -69,11 +70,11 @@ public class User {
         this.address = address;
     }
 
-    public Date getJoiningDate() {
+    public LocalDate getJoiningDate() {
         return joiningDate;
     }
 
-    public void setJoiningDate(Date joiningDate) {
+    public void setJoiningDate(LocalDate joiningDate) {
         this.joiningDate = joiningDate;
     }
 }

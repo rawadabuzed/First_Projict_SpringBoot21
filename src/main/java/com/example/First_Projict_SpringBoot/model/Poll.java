@@ -1,4 +1,4 @@
-package com.example.First_Projict_SpringBoot.controller;
+package com.example.First_Projict_SpringBoot.model;
 
 public class Poll {
 
