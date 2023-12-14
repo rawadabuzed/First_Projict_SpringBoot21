@@ -2,14 +2,13 @@ package com.example.First_Projict_SpringBoot.model;
 
 public class Poll {
 
-    private String id;
+    private int id;
     private String title;
     private String option1;
     private String option2;
     private String option3;
     private String option4;
-
-    public Poll(String id, String title, String option1, String option2, String option3, String option4) {
+    public Poll(int id, String title, String option1, String option2, String option3, String option4) {
         this.id = id;
         this.title = title;
         this.option1 = option1;
@@ -18,11 +17,11 @@ public class Poll {
         this.option4 = option4;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

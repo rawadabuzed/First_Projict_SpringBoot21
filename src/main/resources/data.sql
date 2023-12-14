@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS customer;
 DROP TABLE IF EXISTS customer_order;
 
-CREATE TABLE customer(
+CREATE TABLE users(
     id int NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(255) NOT NULL DEFAULT '',
     last_name VARCHAR(255) NOT NULL DEFAULT '',
@@ -12,19 +12,24 @@ CREATE TABLE customer(
     PRIMARY KEY(id)
 );
 
-
-CREATE TABLE customer_order(
+CREATE TABLE polls(
     id int NOT NULL AUTO_INCREMENT,
-    item_name VARCHAR(255) NOT NULL DEFAULT '',
-    price DECIMAL(100,2) NOT NULL DEFAULT '',
-    customer_id int NOT NULL,
-    PRIMARY KEY(id),
-    FOREIGN KEY (customer_id) REFERENCES customer(id)
+    title VARCHAR(255) NOT NULL DEFAULT '',
+    option1 VARCHAR(255) NOT NULL DEFAULT '',
+    option2 VARCHAR(255) NOT NULL DEFAULT '',
+    option3 VARCHAR(255) NOT NULL DEFAULT '',
+    option4 VARCHAR(255) NOT NULL DEFAULT '',
+    PRIMARY KEY(id)
 );
 
-INSERT INTO customer (first_name,last_name,email,age,address)
-VALUES ('Tom','Sawyer','ts@mail.com','18','masada'),
-        ('Lara','Croft','lc@mail.com','20','majdalShams'),
-        ('Harry','Potter','hp@mail.com','30','telAviv'),
-        ('John','Wick','jw@mail.com','24','shmona'),
-        ('Harry','Potter','hp@mail.com','50','hifa');
+CREATE TABLE users_poll(
+    id int NOT NULL AUTO_INCREMENT,
+    user_id int NOT NULL,
+    poll_id int NOT NULL,
+    answers VARCHAR(255) NOT NULL DEFAULT '',
+    PRIMARY KEY(id),
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (poll_id) REFERENCES polls(id)
+
+);
+
