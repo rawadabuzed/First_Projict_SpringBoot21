@@ -7,10 +7,39 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PollServicelmpl implements PollService{
+
+
+
     @Override
     public void createPoll(Poll poll) {
 
     }
+
+
+  //if(customer.getCustomerStatus() == CustomerStatus.REGULAR){
+  //      customerRepository.createCustomer(customer);
+  //  }else{
+  //      Integer vipCustomersCreated = customerRepository.getCustomersByStatus(CustomerStatus.VIP).size();
+  //      if(vipCustomersCreated < Constants.VIP_ALLOWED){
+  //          customerRepository.createCustomer(customer);
+  //      }else{
+  //          customer.setCustomerStatus(CustomerStatus.REGULAR);
+  //          customerRepository.createCustomer(customer);
+  //      }
+  //  }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public void deletePollById(Integer id) {

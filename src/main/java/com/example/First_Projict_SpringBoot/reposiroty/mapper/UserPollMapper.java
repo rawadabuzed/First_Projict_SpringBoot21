@@ -12,8 +12,8 @@ public class UserPollMapper implements RowMapper<UserPoll> {
    public UserPoll mapRow(ResultSet rs, int rowNum) throws SQLException {
         return new UserPoll(
                 rs.getInt("id"),
-                rs.getInt("userId"),
-                rs.getInt("pollId"),
+                rs.getInt("user_id"),
+                rs.getInt("poll_id"),
                 rs.getString("answers")
 
         );
