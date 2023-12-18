@@ -1,13 +1,11 @@
 package com.example.First_Projict_SpringBoot.service;
 
 import com.example.First_Projict_SpringBoot.model.Poll;
-import com.example.First_Projict_SpringBoot.model.UserPoll;
-import com.example.First_Projict_SpringBoot.model.UserPollRequest;
 import com.example.First_Projict_SpringBoot.reposiroty.PollRepository;
-import com.example.First_Projict_SpringBoot.reposiroty.PollRepositorylmpl;
-import com.example.First_Projict_SpringBoot.reposiroty.UserRepositorylmpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 @Service
@@ -61,6 +59,10 @@ public class PollServicelmpl implements PollService{
         pollRepository.updatePollOption4(id, option4);
     }
 
+    @Override
+    public Poll getPollById(Integer id) {
+        return pollRepository.getPollById(id);
+    }
 
 
 }

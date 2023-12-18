@@ -5,14 +5,12 @@ import com.example.First_Projict_SpringBoot.service.UserServicelmpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.List;
+
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
-    //HashMap<Integer, User> users = new HashMap<>();
+
 
     @Autowired
     private UserServicelmpl userService;
@@ -22,14 +20,6 @@ public class UserController {
 
         userService.createUser(user);
 
-
-        //if (users.containsKey(user.getId())){
-        //    return "user already exists";
-        //}else {
-        //    users.put(user.getId(),user);
-        //    user.setJoiningDate(LocalDate.now());
-        //    return "user was created";
-        //}
     }
 
     @DeleteMapping(value = "/delete")
@@ -37,13 +27,6 @@ public class UserController {
 
         userService.deleteUserById(id);
 
-
-        //if (users.containsKey(id)){
-        //    users.remove(id);
-        //    return "user was deleted";
-        //}else{
-        //    return "user not found";
-        //}
     }
 
     @PutMapping(value = "/update_first_name")
@@ -51,12 +34,6 @@ public class UserController {
 
         userService.updateUserFirstName(id, firstName);
 
-        //if (users.containsKey(id) && name != null && name.length() > 0){
-        //    users.get(id).setFirstName(name);
-        //    return "user's name was updated";
-        //}else {
-        //    return "user's not found or name was empty";
-        //}
     }
 
     @PutMapping(value = "/update_last_name")
@@ -64,13 +41,6 @@ public class UserController {
 
         userService.updateUserLastName(id, lastName);
 
-
-        //if (users.containsKey(id) && lastName != null && lastName.length() > 0){
-        //    users.get(id).setLastName(lastName);
-        //    return "user's lastName was updated";
-        //}else {
-        //    return "user's not found or lastName was empty";
-        //}
     }
 
 
@@ -79,12 +49,6 @@ public class UserController {
 
         userService.updateUserEmail(id, email);
 
-        //if (users.containsKey(id) && email != null && email.length() > 0){
-        //    users.get(id).setEmail(email);
-        //    return "user's email was updated";
-        //}else {
-        //    return "user's not found or email was empty";
-        //}
     }
 
 
@@ -95,13 +59,6 @@ public class UserController {
 
         userService.updateUserAge(id, age);
 
-
-        //if (users.containsKey(id) && age != null && age.length() > 0){
-        //    users.get(id).setEmail(age);
-        //   return "user's age was updated";
-        //}else {
-        //    return "user's not found or age was empty";
-        //}
     }
 
 
@@ -110,13 +67,6 @@ public class UserController {
 
         userService.updateUserAddress(id, address);
 
-
-        //if (users.containsKey(id) && address != null && address.length() > 0){
-        //    users.get(id).setEmail(address);
-        //    return "user's address was updated";
-        //}else {
-        //    return "user's not found or address was empty";
-        //}
     }
 
     @GetMapping(value = "/by_id")

@@ -1,7 +1,9 @@
 package com.example.First_Projict_SpringBoot.reposiroty;
 
 import com.example.First_Projict_SpringBoot.model.Poll;
-import com.example.First_Projict_SpringBoot.model.User;
+
+import java.util.List;
+
 
 public interface PollRepository {
 
@@ -13,4 +15,7 @@ public interface PollRepository {
     void  updatePollOption2(Integer id, String option2);
     void  updatePollOption3(Integer id, String option3);
     void  updatePollOption4(Integer id, String option4);
+    Poll getPollById(Integer id);
+
+
 }

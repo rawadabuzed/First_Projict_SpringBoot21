@@ -1,10 +1,13 @@
 package com.example.First_Projict_SpringBoot.reposiroty;
 
 import com.example.First_Projict_SpringBoot.model.Poll;
+import com.example.First_Projict_SpringBoot.reposiroty.mapper.PollMapper;
 import com.example.First_Projict_SpringBoot.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class PollRepositorylmpl implements PollRepository {
@@ -65,4 +68,12 @@ public class PollRepositorylmpl implements PollRepository {
         String sql = "UPDATE "+ Constants.POLLS_TABLE_NAME +" SET title = ? WHERE id = ?";
         jdbcTemplate.update(sql,option4,id);
     }
+
+    @Override
+    public Poll getPollById(Integer id) {
+        String sql="SELECT * FROM " + Constants.POLLS_TABLE_NAME + "WHERE id = ?";
+        return jdbcTemplate.queryForObject(sql,new PollMapper(),id);
+    }
+
+
 }

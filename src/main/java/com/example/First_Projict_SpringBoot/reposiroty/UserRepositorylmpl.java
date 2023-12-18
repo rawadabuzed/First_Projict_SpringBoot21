@@ -1,15 +1,14 @@
 package com.example.First_Projict_SpringBoot.reposiroty;
 
 import com.example.First_Projict_SpringBoot.model.User;
-import com.example.First_Projict_SpringBoot.model.UserPoll;
+
 import com.example.First_Projict_SpringBoot.reposiroty.mapper.UserMapper;
-import com.example.First_Projict_SpringBoot.reposiroty.mapper.UserPollMapper;
+
 import com.example.First_Projict_SpringBoot.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Date;
 
 @Repository
 public  class UserRepositorylmpl implements UserRepository{
@@ -38,7 +37,7 @@ public  class UserRepositorylmpl implements UserRepository{
         jdbcTemplate.update(sql,id);
     }
 
-    //u need to update this code :) : I think itL's good to go
+
     @Override
     public void updateUser(User user) {
         System.out.println("User " + user + " was updated");
@@ -110,10 +109,6 @@ public  class UserRepositorylmpl implements UserRepository{
         jdbcTemplate.update(sql,address,id);
     }
 
-   //@Override
-    //public void updateUserJoiningDate(Integer id, Date joiningDate) {
-
-    //}
 
 
     @Override

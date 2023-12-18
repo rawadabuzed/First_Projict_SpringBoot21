@@ -15,7 +15,7 @@ public class UserPollController {
     private UserPollService userPollService;
 
     @PostMapping
-    public void UserPoll(@RequestBody UserPollRequest userPollRequest){
+    public void createUserPoll(@RequestBody UserPollRequest userPollRequest){
         userPollService.createUserPoll(userPollRequest);
     }
     @PutMapping

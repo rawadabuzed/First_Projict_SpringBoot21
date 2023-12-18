@@ -1,12 +1,14 @@
 package com.example.First_Projict_SpringBoot.service;
 
-import com.example.First_Projict_SpringBoot.model.Poll;
+
 import com.example.First_Projict_SpringBoot.model.User;
 import com.example.First_Projict_SpringBoot.model.UserPoll;
 import com.example.First_Projict_SpringBoot.model.UserPollRequest;
 import com.example.First_Projict_SpringBoot.reposiroty.UserPollRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserPollServicelmpl implements UserPollService {
@@ -23,15 +25,15 @@ public class UserPollServicelmpl implements UserPollService {
 
     @Override
     public void createUserPoll(UserPollRequest UserPollRequest) {
-        User user = UserPollRequest.getUser();
-        UserPoll poll = UserPollRequest.getPoll();
-        UserPoll userPoll = UserPollRequest.getPoll();
-        if (userService.getUserById(user.getId()) != null){
-            userPoll.setUserId(user.getId());
-            userPoll.setPollId(poll.getPollId());
+        UserPoll userPoll = null;
+        int user = UserPollRequest.getUser().getId();
+        int poll = UserPollRequest.getPoll().getId();
+        String answer = UserPollRequest.getPoll().getAnswers();
+        if (userService.getUserById(user) != null){
+            userPoll.setUserId(user);
+            userPoll.setPollId(poll);
+            userPoll.setAnswers(answer);
             userPollRepository.createUserPoll(userPoll);
-        }else {
-            userService.createUser(user);
         }
 
     }
@@ -49,5 +51,30 @@ public class UserPollServicelmpl implements UserPollService {
     @Override
     public UserPoll getUserPollById(Integer id) {
         return userPollRepository.getUserPollById(id);
+    }
+
+    @Override
+    public void getNumUserA(Integer id) {
+
+    }
+
+    @Override
+    public void getNumUserQ(Integer id) {
+
+    }
+
+    @Override
+    public List<String> getUserAnswers(Integer id) {
+        return null;
+    }
+
+    @Override
+    public void getNumQuisUser(Integer id) {
+
+    }
+
+    @Override
+    public void getAll() {
+
     }
 }

@@ -1,12 +1,12 @@
 package com.example.First_Projict_SpringBoot.reposiroty.mapper;
 
-import com.example.First_Projict_SpringBoot.model.Poll;
+
 import com.example.First_Projict_SpringBoot.model.User;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
+
 
 public class UserMapper implements RowMapper<User> {
 

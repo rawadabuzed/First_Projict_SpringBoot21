@@ -1,6 +1,6 @@
 package com.example.First_Projict_SpringBoot.reposiroty.mapper;
 
-import com.example.First_Projict_SpringBoot.model.Poll;
+
 import com.example.First_Projict_SpringBoot.model.UserPoll;
 import org.springframework.jdbc.core.RowMapper;
 

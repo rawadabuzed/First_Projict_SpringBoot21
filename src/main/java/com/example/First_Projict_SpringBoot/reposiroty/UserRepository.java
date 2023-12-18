@@ -2,9 +2,7 @@ package com.example.First_Projict_SpringBoot.reposiroty;
 
 import com.example.First_Projict_SpringBoot.model.User;
 
-import java.sql.Date;
-import java.time.LocalDate;
-import java.util.List;
+
 
 public interface UserRepository {
 
@@ -17,7 +15,7 @@ public interface UserRepository {
     void updateUserEmail(Integer id, String email);
     void updateUserAge(Integer id, Integer age);
     void updateUserAddress(Integer id, String address);
-    //void updateUserJoiningDate(Integer id, Date joiningDate);
+
 
     User getUserById(Integer id);
 

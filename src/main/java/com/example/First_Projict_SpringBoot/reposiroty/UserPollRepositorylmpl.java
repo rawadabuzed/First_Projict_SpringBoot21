@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class UserPollRepositorylmpl implements UserPollRepository{
 
@@ -36,5 +38,34 @@ public class UserPollRepositorylmpl implements UserPollRepository{
     public UserPoll getUserPollById(Integer id) {
         String sql = "SELECT * FROM " + Constants.USERS_POLL_TABLE_NAME + " WHERE id = ?";
         return jdbcTemplate.queryForObject(sql,new UserPollMapper(),id);
+    }
+
+    @Override
+    public void getNumUserA(Integer id) {
+        String sql = "SELECT * FROM " + Constants.USERS_POLL_TABLE_NAME + " WHERE poll_id = ?";
+
+    }
+
+    @Override
+    public void getNumUserQ(Integer id) {
+        String sql = "SELECT * FROM " + Constants.USERS_POLL_TABLE_NAME + " WHERE poll_id = ?";
+
+    }
+
+    @Override
+    public List<String> getUserAnswers(Integer id) {
+        String sql = "SELECT * FROM " + Constants.USERS_POLL_TABLE_NAME + " WHERE user_id = ?";
+        return null;
+    }
+
+    @Override
+    public void getNumQuisUser(Integer id) {
+        String sql = "SELECT * FROM " + Constants.USERS_POLL_TABLE_NAME + " WHERE user_id = ?";
+
+    }
+
+    @Override
+    public void getAll() {
+
     }
 }

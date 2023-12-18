@@ -2,8 +2,7 @@ package com.example.First_Projict_SpringBoot.service;
 
 import com.example.First_Projict_SpringBoot.model.User;
 
-import java.sql.Date;
-import java.time.LocalDate;
+
 
 public interface UserService {
 

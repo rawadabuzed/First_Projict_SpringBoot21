@@ -2,12 +2,11 @@ package com.example.First_Projict_SpringBoot.service;
 
 import com.example.First_Projict_SpringBoot.model.User;
 import com.example.First_Projict_SpringBoot.model.UserStatus;
-import com.example.First_Projict_SpringBoot.reposiroty.UserRepository;
 import com.example.First_Projict_SpringBoot.reposiroty.UserRepositorylmpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
+
 
 @Service
 public class UserServicelmpl implements UserService{
@@ -15,7 +14,7 @@ public class UserServicelmpl implements UserService{
     @Autowired
     private UserRepositorylmpl userRepository;
 
-    //I think its need fix :)
+
     @Override
     public void createUser(User user) {
         if (user.getUserStatus() == UserStatus.REGULAR){

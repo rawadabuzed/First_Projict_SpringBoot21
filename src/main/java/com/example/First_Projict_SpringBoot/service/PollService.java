@@ -1,8 +1,9 @@
 package com.example.First_Projict_SpringBoot.service;
 
 import com.example.First_Projict_SpringBoot.model.Poll;
-import com.example.First_Projict_SpringBoot.model.UserPoll;
-import com.example.First_Projict_SpringBoot.model.UserPollRequest;
+
+import java.util.List;
+
 
 public interface PollService {
 
@@ -14,7 +15,7 @@ public interface PollService {
     void updatePollOption2(Integer id, String option2);
     void updatePollOption3(Integer id, String option3);
     void updatePollOption4(Integer id, String option4);
-
+    Poll getPollById(Integer id);
 
 
 }
