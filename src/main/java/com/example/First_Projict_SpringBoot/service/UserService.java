@@ -15,8 +15,6 @@ public interface UserService {
     void updateUserEmail(Integer id, String email);
     void updateUserAge(Integer id, Integer age);
     void updateUserAddress(Integer id, String address);
-    void updateUserJoiningDate(Integer id, Date joiningDate);
-
     User getUserById(Integer id);
 
 }

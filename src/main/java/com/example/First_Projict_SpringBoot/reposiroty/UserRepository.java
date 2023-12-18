@@ -11,13 +11,13 @@ public interface UserRepository {
 
     void createUser(User user);
     void deleteUserById(Integer id);
-    void updateUser(User customer);
+    void updateUser(User user);
     void updateUserFirstName(Integer id, String firstName);
     void updateUserLastName(Integer id, String lastName);
     void updateUserEmail(Integer id, String email);
     void updateUserAge(Integer id, Integer age);
     void updateUserAddress(Integer id, String address);
-    void updateUserJoiningDate(Integer id, Date joiningDate);
+    //void updateUserJoiningDate(Integer id, Date joiningDate);
 
     User getUserById(Integer id);
 

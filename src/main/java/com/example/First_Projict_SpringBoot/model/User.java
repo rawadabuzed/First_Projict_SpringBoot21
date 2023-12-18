@@ -1,18 +1,24 @@
 package com.example.First_Projict_SpringBoot.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.LocalDate;
 import java.util.Date;
 
 public class User {
     private int id;
+
+    @JsonProperty("first_name")
     private String firstName;
+    @JsonProperty("last_name")
     private String lastName;
     private String email;
     private int age;
     private String address;
+    @JsonProperty("joining_date")
     private LocalDate joiningDate;
 
-    public User(int id, String firstName, String lastName, String email, int age, String address, LocalDate joiningDate) {
+    public User(int id, String firstName, String lastName, String email, int age, String address, LocalDate joiningDate, UserStatus userStatus) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -20,7 +26,25 @@ public class User {
         this.age = age;
         this.address = address;
         this.joiningDate = joiningDate;
+        this.userStatus = userStatus;
     }
+
+    public User(int id, String firstName, String lastName, String email, int age, String address, LocalDate joiningDate) {
+
+    }
+
+    public UserStatus getUserStatus() {
+        return userStatus;
+    }
+
+    public void setUserStatus(UserStatus userStatus) {
+        this.userStatus = userStatus;
+    }
+
+    @JsonProperty("user_status")
+    private UserStatus userStatus;
+
+
 
     public int getId() {
         return id;

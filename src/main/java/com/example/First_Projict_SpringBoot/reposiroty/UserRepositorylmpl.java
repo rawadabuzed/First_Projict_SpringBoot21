@@ -12,19 +12,10 @@ import org.springframework.stereotype.Repository;
 import java.sql.Date;
 
 @Repository
-public abstract class UserRepositorylmpl implements UserRepository{
+public  class UserRepositorylmpl implements UserRepository{
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-
-
-  //rs.getInt("id"),
-  //        rs.getString("first_name"),
-  //        rs.getString("last_name"),
-  //        rs.getString("email"),
-  //        rs.getInt("age"),
-   //       rs.getString("address"),
-    //      rs.getDate("joining_date").toLocalDate()
 
     @Override
     public void createUser(User user) {
@@ -47,7 +38,7 @@ public abstract class UserRepositorylmpl implements UserRepository{
         jdbcTemplate.update(sql,id);
     }
 
-    //u need to update this code :)
+    //u need to update this code :) : I think itL's good to go
     @Override
     public void updateUser(User user) {
         System.out.println("User " + user + " was updated");
@@ -119,6 +110,10 @@ public abstract class UserRepositorylmpl implements UserRepository{
         jdbcTemplate.update(sql,address,id);
     }
 
+   //@Override
+    //public void updateUserJoiningDate(Integer id, Date joiningDate) {
+
+    //}
 
 
     @Override
