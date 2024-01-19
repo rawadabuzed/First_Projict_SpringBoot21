@@ -17,7 +17,7 @@ public class PollRepositorylmpl implements PollRepository {
 
     @Override
     public void createPoll(Poll poll) {
-        String sql= "INSERT INTO"+ Constants.POLLS_TABLE_NAME +" (title,option1,option2,option3,option4) VALUES (?,?,?,?,?)";
+        String sql= "INSERT INTO " + Constants.POLLS_TABLE_NAME + " (title,option1,option2,option3,option4) VALUES (?,?,?,?,?)";
         jdbcTemplate.update(sql,
                 poll.getTitle(),
                 poll.getOption1(),

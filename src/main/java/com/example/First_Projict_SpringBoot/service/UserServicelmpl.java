@@ -1,7 +1,6 @@
 package com.example.First_Projict_SpringBoot.service;
 
 import com.example.First_Projict_SpringBoot.model.User;
-import com.example.First_Projict_SpringBoot.model.UserStatus;
 import com.example.First_Projict_SpringBoot.reposiroty.UserRepositorylmpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,12 +16,7 @@ public class UserServicelmpl implements UserService{
 
     @Override
     public void createUser(User user) {
-        if (user.getUserStatus() == UserStatus.REGULAR){
-            userRepository.createUser(user);
-        }else {
-            user.setUserStatus(UserStatus.REGULAR);
-            userRepository.createUser(user);
-        }
+
     }
 
     @Override

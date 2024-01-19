@@ -18,9 +18,8 @@ public class PollController {
     @Autowired
     private PollServicelmpl pollService;
 
-
     @PostMapping(value = "/create")
-    public void createUser(@RequestBody Poll poll){
+    public void createPoll(@RequestBody Poll poll){
 
         pollService.createPoll(poll);
 
@@ -73,7 +72,8 @@ public class PollController {
 
 
     @GetMapping(value = "/by_id")
-    public void  getPollById(@RequestParam Integer id){
+    public Poll getPollById(@RequestParam Integer id){
+        return pollService.getPollById(id);
 
     }
 

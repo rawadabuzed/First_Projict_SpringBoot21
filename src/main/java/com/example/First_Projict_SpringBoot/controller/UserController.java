@@ -1,6 +1,8 @@
 package com.example.First_Projict_SpringBoot.controller;
 
 import com.example.First_Projict_SpringBoot.model.User;
+import com.example.First_Projict_SpringBoot.reposiroty.UserPollRepositorylmpl;
+import com.example.First_Projict_SpringBoot.service.UserPollServicelmpl;
 import com.example.First_Projict_SpringBoot.service.UserServicelmpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,7 @@ public class UserController {
 
     @Autowired
     private UserServicelmpl userService;
+    private UserPollServicelmpl userPollService;
 
     @PostMapping(value = "/create")
     public void createUser(@RequestBody User user){
@@ -26,7 +29,7 @@ public class UserController {
     public void deleteUserById(@RequestParam Integer id){
 
         userService.deleteUserById(id);
-
+        userPollService.deleteUserPoll(id);
     }
 
     @PutMapping(value = "/update_first_name")

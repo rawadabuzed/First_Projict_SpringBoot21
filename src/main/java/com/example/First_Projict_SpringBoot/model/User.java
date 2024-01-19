@@ -18,7 +18,7 @@ public class User {
     @JsonProperty("joining_date")
     private LocalDate joiningDate;
 
-    public User(int id, String firstName, String lastName, String email, int age, String address, LocalDate joiningDate, UserStatus userStatus) {
+    public User(int id, String firstName, String lastName, String email, int age, String address, LocalDate joiningDate) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -26,23 +26,8 @@ public class User {
         this.age = age;
         this.address = address;
         this.joiningDate = joiningDate;
-        this.userStatus = userStatus;
-    }
-
-    public User(int id, String firstName, String lastName, String email, int age, String address, LocalDate joiningDate) {
 
     }
-
-    public UserStatus getUserStatus() {
-        return userStatus;
-    }
-
-    public void setUserStatus(UserStatus userStatus) {
-        this.userStatus = userStatus;
-    }
-
-    @JsonProperty("user_status")
-    private UserStatus userStatus;
 
 
 

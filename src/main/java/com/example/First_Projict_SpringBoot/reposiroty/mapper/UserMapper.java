@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.ZoneId;
 
 
 public class UserMapper implements RowMapper<User> {
@@ -19,7 +20,7 @@ public class UserMapper implements RowMapper<User> {
                 rs.getString("email"),
                 rs.getInt("age"),
                 rs.getString("address"),
-                rs.getDate("joining_date").toLocalDate()
+                rs.getDate("joining_date").toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
 
         );
     }

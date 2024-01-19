@@ -8,7 +8,7 @@ CREATE TABLE users(
     email VARCHAR(255) NOT NULL DEFAULT '',
     age int NOT NULL,
     address VARCHAR(255) NOT NULL DEFAULT '',
---    joining_date DATE,
+    joining_date DATE,
     PRIMARY KEY(id)
 );
 

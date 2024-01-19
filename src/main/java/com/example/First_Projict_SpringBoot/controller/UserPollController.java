@@ -25,6 +25,7 @@ public class UserPollController {
     @DeleteMapping(value = "/delete")
     public void deleteUserPoll(@RequestParam Integer id){
         userPollService.deleteUserPoll(id);
+
     }
 
     @GetMapping(value = "/by_id")
